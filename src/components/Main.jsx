@@ -3,7 +3,7 @@ import "./Main.css";
 import Card from "./Card";
 //------------------------------------------------------------------------------------------------------------------
 let API_KEY = "&api_key=c0b9929024784ad3e09048d588e8dfd7";                           // Definimos las variables con valores relacionados con la API de The Movie Database,
-let base_url = "http://api.themoviedb.org/3";                                        // incluyendo la clave de API, la URL base y una URL completa para solicitar peliculas
+let base_url = "https://api.themoviedb.org/3";                                        // incluyendo la clave de API, la URL base y una URL completa para solicitar peliculas
 let url = base_url + "/movie/popular?language=es-ESP&page=1" + API_KEY;              // también esta el array que usamos para las categorías de películas.
 let arr = ["Tendencias", "Mejor Puntaje", "Estrenos", "Series", "Documentales"];
 //-------------------------------------------------------------------------------------------------------------------
