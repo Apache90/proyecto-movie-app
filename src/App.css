@@ -36,21 +36,3 @@
     transform: rotate(360deg);
   }
 }
-
-@media (max-width:900px){
-  .header{
-      background-color: var(--secondary-color);
-      height: 180px;
-  }
-  nav ul{
-      display: flex;
-      flex-direction: column;
-  }
-  nav ul li{
-      padding-top: 10px;
-  }
-  .search-btn{
-      width: 200px;
-      margin-right: 100px;
-  }
-}
