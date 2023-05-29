@@ -1,11 +1,12 @@
 import './App.css';
 import Main from './components/Main';
-import Card from './components/Card';
+import Footer from './components/Footer';
 
 function App() {
   return (
     <>
       <Main/>
+      <Footer/>
     </>
   );
 }

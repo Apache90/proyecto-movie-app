@@ -1,6 +1,7 @@
 import react, { useState, useEffect } from "react";
 import "./Main.css";
 import Card from "./Card";
+import notfound from "../images/notfound.jpg"
 //------------------------------------------------------------------------------------------------------------------
 let API_KEY = "&api_key=c0b9929024784ad3e09048d588e8dfd7";                           // Definimos las variables con valores relacionados con la API de The Movie Database,
 let base_url = "https://api.themoviedb.org/3";                                        // incluyendo la clave de API, la URL base y una URL completa para solicitar peliculas
@@ -111,7 +112,7 @@ const searchMovie = (event) => {
       <div className="container">
 {/* //---------------------------------------------------------------------------------------------------------------------*/}
         {movieData.length == 0 ? (
-          <p className="notFound">NI LA CIA PUEDE ENCONTRAR LO QUE BUSCAS</p>  // Usamos una expresión condicional (operador ternario) para mostrar un mensaje 
+          <p className="notFound"><img src={notfound} alt=""/></p>  // Usamos una expresión condicional (operador ternario) para mostrar un mensaje 
         ) : (                                                                  // de "Not Found" si no hay datos de películas en el estado movieData. De lo contrario, 
           movieData.map((res, pos) => {                                        // se utiliza el método map() para iterar sobre los datos de películas en movieData 
             return <Card info={res} key={pos} />;                              // y renderizar una tarjeta de película (<Card>) para cada elemento.

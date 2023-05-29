@@ -147,6 +147,9 @@ nav ul{
     justify-content: center;
     flex-wrap: wrap;
   }
+  .container p{
+    margin: 100px;
+  }
   .notFound{
     font-size: 25px;
     font-weight: bold;
@@ -157,3 +160,4 @@ nav ul{
     margin-top: 70px;
 
   }
+ 
