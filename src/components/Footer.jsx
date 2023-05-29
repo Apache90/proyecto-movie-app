@@ -11,39 +11,40 @@ const Footer = () => {
             <div className="footer section_padding">
                 <div className="footer-links">
                     <div className="footer-links-div">
-                        <h4>For Business</h4>
+                        <h4>CONTACTO</h4>
                         <a href="#">
-                            <p>Eployer</p>
+                            <p>3865-12314</p>
                         </a>
                         <a href="#">
-                            <p>Health Plan</p>
+                            <p>San Martin 123</p>
                         </a>
                         <a href="#">
-                            <p>Individual</p>
-                        </a>
-                    </div>
-                    <div className="footer-links-div">
-                        <h4>Resources</h4>
-                        <a href="#">
-                            <p>Resource center</p>
-                        </a>
-                        <a href="#">
-                            <p>Testimonial</p>
-                        </a>
-                        <a href="#">
-                            <p>STV</p>
+                            <p>fullpirateo@gmail.com</p>
                         </a>
                     </div>
                     <div className="footer-links-div">
-                        <h4>Company</h4>
+                        <h4>Servicios</h4>
                         <a href="#">
-                            <p>About</p>
+                            <p>Streaming</p>
                         </a>
                         <a href="#">
-                            <p>Press</p>
+                            <p>API</p>
                         </a>
                         <a href="#">
-                            <p>Employer</p>
+                            <p>Publicidad</p>
+                        </a>
+                        
+                    </div>
+                    <div className="footer-links-div">
+                        <h4>Compania</h4>
+                        <a href="#">
+                            <p>Quienes Somos</p>
+                        </a>
+                        <a href="#">
+                            <p>Administracion</p>
+                        </a>
+                        <a href="#">
+                            <p>RRHH</p>
                         </a>
                     </div>
                     <div className='footer-links-div'>

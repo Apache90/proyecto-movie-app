@@ -147,8 +147,11 @@ nav ul{
     justify-content: center;
     flex-wrap: wrap;
   }
-  .container p{
-    margin: 100px;
+  .imgnotfound{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 80px;
   }
   .notFound{
     font-size: 25px;
