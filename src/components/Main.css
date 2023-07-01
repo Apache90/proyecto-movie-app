@@ -1,183 +1,169 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
 
-*{
-    padding: 0;
-    margin: 0;
-    font-family: 'Raleway', 'Helvetica Neue', Helvetica, Arial;
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Raleway', 'Helvetica Neue', Helvetica, Arial;
 }
-:root{
-    --primary-color:rgb(30, 30, 30);
-    --secondary-color:black;
-}
-body{
-    background-color: var(--primary-color);
-}
-.header{
-    background-color: var(--secondary-color);
-    height: 80px;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    box-shadow: 0px 2px 10px rgb(255, 255, 255);
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    margin-bottom: 30px;
-}
-nav ul{
-    display: flex;
-}
-.headerLinks{
-    list-style: none;
-    margin-right: 16px;
-}
-.headerLinks a{
-    text-decoration: none;
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
-    padding: 3px 10px;
-}
-.bntheader {
-    padding: 30px 30px;
-    margin: 20px;
-    border: none;
-    outline: none;
-    color: rgb(255, 255, 255);
-    background: black;
-    cursor: pointer;
-    position: relative;
-    z-index: 0;
-    border-radius: 5px;
-  }
-  
-  .bntheader:before {
-    content: "";
-    background: linear-gradient(
-      45deg,
-      #840101,
-      #a74c02,
-      #969300,
-      #ffffff,
-      #008670,
-      #001995,
-      #410086,
-      #8c006e,
-      #970000
-    );
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    background-size: 900%;
-    z-index: -1;
-    filter: blur(5px);
-    width: calc(100% + 6px);
-    height: calc(100% + 6px);
-    animation: glowingbn5 20s linear infinite;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    border-radius: 10px;
-  }
-  
-  @keyframes glowingbn5 {
-    0% {
-      background-position: 0 0;
-    }
-    50% {
-      background-position: 400% 0;
-    }
-    100% {
-      background-position: 0 0;
-    }
-  }
-  
-  .bntheader:active {
-    color: #000;
-  }
-  
-  .bntheader:active:after {
-    background: transparent;
-  }
-  
-  .bntheader:hover:before {
-    opacity: 1;
-  }
-  
-  .bntheader:after {
-    z-index: -1;
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: #191919;
-    left: 0;
-    top: 0;
-    border-radius: 10px;
-  }
-  .search-btn{
-    display: flex; 
-  }
-  .search-btn button{
-    background-color: var(--secondary-color);
-    box-shadow: inset 0 5px 10px var(--secondary-color);
-    padding: 3px 8px;
-    border-radius: 0 10px 10px 0;
-    color: white;
-    font-size: 16px;
-    outline: none;
-    border: 1px solid var(--primary-color);
-  } 
-  .inputText{
-    outline: none;
-    border: 1px solid var(--primary-color);
-    border-radius: 10px 0 0 10px;
-    padding: 5px 16px;
-    font-size: 16px;
-    color: white;
-    background-color: var(--primary-color);
-    box-shadow: inset 0 5px 10px var(--secondary-color);
-  }
-  .inputTextField::placeholder{
-    color: white;
-  }
-  .container{
-    margin: auto;
-    width: 80%;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  .imgnotfound{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 80px;
-  }
-  .notFound{
-    font-size: 25px;
-    font-weight: bold;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 70px;
 
+:root {
+  --primary-color: rgb(30, 30, 30);
+  --secondary-color: black;
+}
+
+body {
+  background-color: var(--primary-color);
+}
+
+.header {
+  background-color: var(--secondary-color);
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0px 2px 10px rgb(255, 255, 255);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  margin-bottom: 30px;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+}
+
+.headerLinks {
+  list-style: none;
+  margin-right: 16px;
+}
+
+.headerLinks a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 3px 10px;
+  position: relative;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.headerLinks a::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  bottom: 0;
+  left: 0;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.headerLinks a:hover::before {
+  transform: scaleX(1);
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  margin-left: 16px;
+}
+
+.search-btn {
+  background-color: var(--secondary-color);
+  box-shadow: inset 0 5px 10px var(--secondary-color);
+  padding: 3px 8px;
+  border-radius: 0 0 10px 10px;
+  color: white;
+  font-size: 16px;
+  outline: none;
+  border: 1px solid var(--primary-color);
+  margin-left: 8px;
+}
+
+.inputText {
+  outline: none;
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
+  padding: 5px 16px;
+  font-size: 16px;
+  color: white;
+  background-color: var(--primary-color);
+  box-shadow: inset 0 5px 10px var(--secondary-color);
+}
+
+.inputTextField::placeholder {
+  color: white;
+}
+.logo{
+  height: 40px;
+  width: auto;
+}
+
+.container {
+  margin: auto;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.imgnotfound {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.notFound {
+  font-size: 25px;
+  font-weight: bold;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 70px;
+}
+
+@media (max-width: 900px) {
+  .header {
+    height: 250px;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 16px;
+  }
+  .logo{
+    margin-bottom: -30;
   }
 
-@media (max-width:900px){
-  .header{
-      background-color: var(--secondary-color);
-      height: 180px;
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 16px;
   }
-  nav ul{
-      display: flex;
-      flex-direction: column;
+
+  .headerLinks {
+    margin-right: 0;
   }
-  nav ul li{
-      padding-top: 10px;
+
+  .search-container {
+    margin: 16px 0;
   }
-  .search-btn{
-      width: 200px;
-      margin-right: 100px;
+
+  .search-btn {
+    border-radius: 10px;
+    margin: 8px 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .header {
+    height: 250px;
+  }
+  .logo{
+    margin-bottom: -30px;
   }
 }

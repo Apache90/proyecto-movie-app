@@ -2,11 +2,12 @@ import react, { useState, useEffect } from "react";
 import "./Main.css";
 import Card from "./Card";
 import notfound from "../images/notfound.jpg"
+import logo from "../images/fullpirateo.png"
 //------------------------------------------------------------------------------------------------------------------
 let API_KEY = "&api_key=c0b9929024784ad3e09048d588e8dfd7";                           // Definimos las variables con valores relacionados con la API de The Movie Database,
 let base_url = "https://api.themoviedb.org/3";                                        // incluyendo la clave de API, la URL base y una URL completa para solicitar peliculas
 let url = base_url + "/movie/popular?language=es-ESP&page=1" + API_KEY;              // también esta el array que usamos para las categorías de películas.
-let arr = ["Tendencias", "Mejor Puntaje", "Estrenos", "Series", "Documentales"];
+let arr = ["Tendencias", "Destacadas", "Estrenos", "Series", "Documentales"];
 //-------------------------------------------------------------------------------------------------------------------
 const Main = () => {  // Definimos el componente Main
 //--------------------------------------------------------------------------------------------------------------------
@@ -68,14 +69,16 @@ const searchMovie = (event) => {
   return (
     <>
       <div className="header">
+      <img className="logo" src={logo} alt="" />
         <nav>
+          
           <ul className="headerLinks">
             {arr.map((value) => {
 //--------------------------------------------------------------------------------------------------------------------              
               return (
                 <li>
                   <a
-                    href="#"                                // Renderiza un enlace dentro de una lista. Al hacer clic en el enlace, 
+                                                    // Renderiza un enlace dentro de una lista. Al hacer clic en el enlace, 
                     name={value}                            // se ejecutará la función getData con el valor del atributo name del enlace. 
                     className="bntheader"                   // Esto permite cambiar el estado del componente en función del valor del enlace.
                     onClick={(e) => {
