@@ -27,7 +27,7 @@ const Main = () => {  // Definimos el componente Main
     if (movieType == "Tendencias") {
       url = base_url + "/movie/popular?language=es-ESP&page=1" + API_KEY;
     }
-    if (movieType == "Mejor Puntaje") {
+    if (movieType == "Destacadas") {
       url = base_url + "/movie/top_rated?language=es-ESP&page=1" + API_KEY;
     }
     if (movieType == "Estrenos") {
