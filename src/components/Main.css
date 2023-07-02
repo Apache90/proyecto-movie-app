@@ -175,3 +175,15 @@ nav ul{
       margin-right: 100px;
   }
 }
+
+#empty-list {
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  font-size: xx-large;
+}
+
+.btn-add-remove {
+  padding: 8px;
+  font-size:larger;
+}

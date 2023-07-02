@@ -2,13 +2,13 @@ import React, {useContext} from "react";
 import { GlobalContext } from "../context/GlobalState";
 import "./Card.css";
 
-const Card = (movie) => {
+const WLCard = (movie) => {
 
-    console.log(movie.info);
+    //console.log(movie.info);
     let img_path = "https://image.tmdb.org/t/p/w500";
 
     //
-    const {addMovieToWatchlist, watchlist} = useContext(GlobalContext);
+    const {removeMovieFromWatchlist, watchlist} = useContext(GlobalContext);
 
     let storedMovie = watchlist.find(o => o.id === movie.info.id);
 
@@ -17,7 +17,7 @@ const Card = (movie) => {
 
     return (
         
-            <div className="movie">
+            <div className="movie" key={movie.info.id}>
                 <img src={img_path+movie.info.poster_path} className="poster" alt="" />
                 <div className="movie-details">
                     <div className="box">
@@ -27,16 +27,16 @@ const Card = (movie) => {
                     <div className="overview">
                         <h1>Descripción</h1>
                         {movie.info.overview}
+
+                            <button className="btn-add-remove"
+                            onClick={() => {removeMovieFromWatchlist(movie.info.id)}}>
+                                Quitar de Mi Lista
+                            </button>
                         
-                        <button className="btn-add-remove"
-                        disabled={watchlistDisabled}
-                        onClick={() => {addMovieToWatchlist(movie.info)}}>
-                            Agregar a Mi lista
-                        </button>
                     </div>
                 </div>
             </div>
         
     )
 }
-export default Card;
+export default WLCard;

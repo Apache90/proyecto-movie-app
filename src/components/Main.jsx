@@ -1,6 +1,8 @@
-import react, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./Main.css";
 import Card from "./Card";
+import WLCard from "./WLCard";
+import { GlobalContext } from "../context/GlobalState";
 //------------------------------------------------------------------------------------------------------------------
 let API_KEY = "&api_key=c0b9929024784ad3e09048d588e8dfd7";                           // Definimos las variables con valores relacionados con la API de The Movie Database,
 let base_url = "https://api.themoviedb.org/3";                                        // incluyendo la clave de API, la URL base y una URL completa para solicitar peliculas
@@ -12,6 +14,10 @@ const Main = () => {  // Definimos el componente Main
   const [movieData, setData] = useState([]); 
   const [url_set, setUrl] = useState(url);    // Utilizamos los hooks useState para crear tres estados: movieData, url_set y search.
   const [search, setSearch] = useState();
+//--------------------------------------------------------------------------------------------------------------------
+  const {watchlist} = useContext(GlobalContext);
+
+
 //--------------------------------------------------------------------------------------------------------------------
   useEffect(() => {                            
     fetch(url_set)                             
@@ -118,6 +124,21 @@ const searchMovie = (event) => {
           })
         )}
 {/* //---------------------------------------------------------------------------------------------------------------------*/}
+      </div>
+      <div className="container">
+
+          <div className="header">
+            <h2 className="bntheader">Mi Lista</h2>
+          </div> 
+        
+          {
+            watchlist.length >= 1 ? watchlist.map((res, pos) => {
+              return <WLCard info={res} key={pos} />
+            }) : <h2 id="empty-list">Nada en tu lista. Agregá alguna!</h2>
+          }
+
+          {console.log(watchlist.length)}
+
       </div>
     </>
   );
