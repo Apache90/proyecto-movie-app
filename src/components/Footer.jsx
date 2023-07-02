@@ -1,5 +1,5 @@
-import react from 'react';
-import "./Footer.css"
+import React from 'react';
+import "../styles/Footer.css"
 import fb from "../images/fb.png"
 import insta from "../images/insta.png"
 import tw from "../images/tw.png"

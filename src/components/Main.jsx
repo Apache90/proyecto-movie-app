@@ -1,8 +1,11 @@
-import { useState, useEffect } from "react";
-import "./Main.css";
+import React, { useState, useEffect, useContext } from "react";
+import "../styles/Main.css";
 import Card from "./Card";
 import notfound from "../images/notfound.jpg"
 import logo from "../images/fullpirateo.png"
+import WLCard from "./WLCard";
+import { GlobalContext } from "../context/GlobalState";
+
 //------------------------------------------------------------------------------------------------------------------
 let API_KEY = "&api_key=c0b9929024784ad3e09048d588e8dfd7";                           // Definimos las variables con valores relacionados con la API de The Movie Database,
 let base_url = "https://api.themoviedb.org/3";                                        // incluyendo la clave de API, la URL base y una URL completa para solicitar peliculas
@@ -14,6 +17,7 @@ const Main = () => {  // Definimos el componente Main
   const [movieData, setData] = useState([]);
   const [url_set, setUrl] = useState(url);    // Utilizamos los hooks useState para crear tres estados: movieData, url_set y search.
   const [search, setSearch] = useState();
+  const { watchlist } = useContext(GlobalContext);
   //--------------------------------------------------------------------------------------------------------------------
   useEffect(() => {
     fetch(url_set)
@@ -110,13 +114,6 @@ const Main = () => {  // Definimos el componente Main
             </button>
           </div>
         </form>
-
-
-
-
-
-
-
       </div>
       <div className="container">
         {/* //---------------------------------------------------------------------------------------------------------------------*/}
@@ -128,6 +125,21 @@ const Main = () => {  // Definimos el componente Main
           })
         )}
         {/* //---------------------------------------------------------------------------------------------------------------------*/}
+      </div>
+
+
+      <div className="headerLista">
+        <h2 className="bntLista">Mi Lista</h2>
+      </div>
+      <div className="containerLista">
+        {
+          watchlist.length >= 1 ? watchlist.map((res, pos) => {
+            return <WLCard info={res} key={pos} />
+          }) : <h2 id="empty-list">Nada en tu lista. Agregá alguna!</h2>
+        }
+
+        {console.log(watchlist.length)}
+
       </div>
     </>
   );

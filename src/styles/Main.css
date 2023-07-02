@@ -167,3 +167,38 @@ nav ul {
     margin-bottom: -30px;
   }
 }
+
+/* Estilos del encabezado de la lista */
+.headerLista {
+  background-color: var(--secondary-color);
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0px 2px 10px rgb(255, 255, 255);
+  margin-bottom: 30px;
+}
+
+.bntLista {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Estilos del contenedor de la lista */
+.containerLista {
+  margin: auto;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.containerLista > h2#empty-list {
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 40px;
+}

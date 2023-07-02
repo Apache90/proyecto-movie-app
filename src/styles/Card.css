@@ -73,3 +73,20 @@ body{
     right: 5px;
     bottom: 5px;
   }
+  .movie .btn-add-remove {
+    background-color: var(--secondary-color);
+    color: white;
+    font-size: 14px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  
+  .movie .btn-add-remove:hover {
+    background-color: white;
+    color: var(--secondary-color);
+  }
+  
